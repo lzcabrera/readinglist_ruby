@@ -16,9 +16,9 @@
       </p>
     </div>
     <span>
-      <%# book.genres.each do |genre| %>
-        <%# link_to genre.name, '#', class: 'label label-primary' %>
-      <%# end %>
+      <% book.genres.each do |genre| %>
+        <%= link_to genre.name, books_path(filter: genre.id), class: 'label label-primary' %>
+      <% end %>
     </span>
   </div>
 </li>
