@@ -38,13 +38,15 @@
 
             <label><strong>Genre</strong></label>
 
-            <% @genres.each do |genre| %>
+            <!-- <% @genres.each do |genre| %>
               <div class="checkbox">
                 <label>
                   <%= check_box_tag 'book[genre_ids][]', genre.id %> <%= genre.name %>
                 </label>
               </div>
-            <% end %>
+            <% end %> -->
+            <%= f.select :genre_ids,
+              @genres.map { |g| [g.name, g.id] }, {}, {multiple: true} %>
           </div>
 
           <br>
